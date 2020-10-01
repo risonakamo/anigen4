@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import ShowBox from "./components/show-box/show-box";
+
+import "./index.less";
+
 function IndexMain():JSX.Element
 {
-  return <div></div>;
+  return <>
+    <ShowBox/>
+  </>;
 }
 
 function main()

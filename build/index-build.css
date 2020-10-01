@@ -1,0 +1,46 @@
+.show-box {
+  width: 200px;
+}
+.show-box img {
+  width: 100%;
+  border-radius: 4px;
+}
+.show-box .top-contain {
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+.show-box .top-contain .season {
+  margin-right: 3px;
+  margin-left: 3px;
+  color: lightblue;
+}
+.show-box .content-contain {
+  margin-top: 2px;
+}
+.show-box .content-contain h1 {
+  text-align: center;
+}
+.show-box .content-contain .tags {
+  text-align: center;
+  line-height: 0.87;
+  margin-top: 3px;
+  opacity: 0.5;
+}
+.show-box .content-contain .tags span {
+  display: inline-block;
+  font-size: 9px;
+  margin: 0 2px 0 2px;
+  vertical-align: top;
+}
+
+body {
+  background-color: #131719;
+  font-family: "roboto";
+  color: #ffffff;
+}
+h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
