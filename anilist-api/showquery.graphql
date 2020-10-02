@@ -16,5 +16,6 @@ query ($id:Int)
         seasonYear
         format
         genres
+        siteUrl
     }
 }

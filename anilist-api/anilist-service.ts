@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 // mirror from showquery.graphql
 const showQuery=`
 query ($id:Int)
@@ -17,6 +19,7 @@ query ($id:Int)
         seasonYear
         format
         genres
+        siteUrl
     }
 }`
 
@@ -38,4 +41,18 @@ export async function queryShow(showId:number):Promise<ShowQueryResult|null>
     })).json();
 
     return queryResult.data.Media;
+}
+
+// request anilist show data for multiple shows, sort into category
+export async function queryShows(showIds:number[]):Promise<GroupedShowsQuery>
+{
+    var showResults:(ShowQueryResult|null)[]=await Promise.all(_.map(showIds,(x:number)=>{
+        return queryShow(x);
+    }));
+
+    var showResultsFiltered:ShowQueryResult[]=_.filter(showResults) as ShowQueryResult[];
+
+    return _.groupBy(showResultsFiltered,(x:ShowQueryResult)=>{
+        return x.format;
+    }) as GroupedShowsQuery;
 }

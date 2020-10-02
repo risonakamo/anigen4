@@ -11,8 +11,9 @@ interface ShowQueryResult
 
     season:"SPRING"|"WINTER"|"SUMMER"|"FALL"
     seasonYear:number
-    format:string
+    format:ShowFormats
     genres:string[]
+    siteUrl:string
 }
 
 interface ShowQueryResultWrapper
@@ -21,3 +22,8 @@ interface ShowQueryResultWrapper
         Media:ShowQueryResult
     }
 }
+
+type ShowFormats="MOVIE"|"ONA"|"TV"|"TV_SHORT";
+
+// arrays of shows keyed by their format
+type GroupedShowsQuery=Record<ShowFormats,ShowQueryResult[]>;
