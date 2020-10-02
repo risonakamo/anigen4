@@ -1,0 +1,20 @@
+# returns a ShowQueryResult for a given target ID of a show
+query ($id:Int)
+{
+    Media(id:$id)
+    {
+        title {
+            romaji
+        }
+
+        coverImage {
+            medium
+            color
+        }
+
+        season
+        seasonYear
+        format
+        genres
+    }
+}
