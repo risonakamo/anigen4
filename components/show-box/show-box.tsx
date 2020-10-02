@@ -13,7 +13,7 @@ export default function ShowBox():JSX.Element
     <img src="../ref/testimage.jpg"/>
 
     <div className="content-contain">
-      <h1>Houkago Teibou Nisshi</h1>
+      <h2>Houkago Teibou Nisshi</h2>
       <div className="tags">
         <span>Slice of Life</span>
         <span>Comedy</span>

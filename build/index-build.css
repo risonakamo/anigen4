@@ -1,5 +1,7 @@
 .show-box {
+  display: inline-block;
   width: 200px;
+  margin: 10px;
 }
 .show-box img {
   width: 100%;
@@ -16,12 +18,12 @@
 }
 .show-box .content-contain {
   margin-top: 2px;
+  text-align: center;
 }
 .show-box .content-contain h1 {
   text-align: center;
 }
 .show-box .content-contain .tags {
-  text-align: center;
   line-height: 0.87;
   margin-top: 3px;
   opacity: 0.5;
@@ -33,12 +35,35 @@
   vertical-align: top;
 }
 
+.show-section {
+  margin: 15px;
+}
+.show-section .title-zone {
+  margin: 0 10px 0 10px;
+}
+.show-section .title-zone .title-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.show-section .title-zone .title-bar .inner-bar {
+  height: 100%;
+  width: 60px;
+  background: #cca574;
+}
+
 body {
   background-color: #131719;
   font-family: "roboto";
   color: #ffffff;
+  margin: 0;
 }
 h1 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 4px 0 4px 0;
+}
+h2 {
   margin: 0;
   font-size: 15px;
   font-weight: 400;
