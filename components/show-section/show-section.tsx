@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 import ShowBox from "../show-box/show-box";
 
@@ -12,6 +13,10 @@ interface ShowSectionProps
 
 export default function ShowSection(props:ShowSectionProps):JSX.Element
 {
+  const showBoxes=_.map(props.shows,(x:ShowInfo,i:number)=>{
+    return <ShowBox show={x} key={i}/>;
+  });
+
   return <section className="show-section">
     <div className="title-zone">
       <h1>{props.title}</h1>
@@ -20,9 +25,7 @@ export default function ShowSection(props:ShowSectionProps):JSX.Element
       </div>
     </div>
     <div className="shows-contain">
-      <ShowBox/>
-      <ShowBox/>
-      <ShowBox/>
+      {showBoxes}
     </div>
   </section>;
 }

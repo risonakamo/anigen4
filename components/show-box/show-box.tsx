@@ -1,22 +1,31 @@
 import React from "react";
+import _ from "lodash";
 
 import "./show-box.less";
 
-export default function ShowBox():JSX.Element
+interface ShowBoxProps
 {
+  show:ShowInfo
+}
+
+export default function ShowBox(props:ShowBoxProps):JSX.Element
+{
+  const genretags=_.map(props.show.genres,(x:string)=>{
+    return <span>{x}</span>
+  });
+
   return <div className="show-box">
     <div className="top-contain">
-      <span className="season">Winter</span>
-      <span>2020</span>
+      <span className="season">{props.show.season}</span>
+      <span>{props.show.seasonYear}</span>
     </div>
 
-    <img src="../ref/testimage.jpg"/>
+    <img src={props.show.coverImage.large}/>
 
     <div className="content-contain">
-      <h2>Houkago Teibou Nisshi</h2>
+      <h2>{props.show.title.romaji}</h2>
       <div className="tags">
-        <span>Slice of Life</span>
-        <span>Comedy</span>
+        {genretags}
       </div>
     </div>
   </div>;

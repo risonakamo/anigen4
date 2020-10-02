@@ -11,7 +11,7 @@ query ($id:Int)
         }
 
         coverImage {
-            medium
+            large
             color
         }
 

@@ -5,7 +5,7 @@ interface ShowInfo
     }
 
     coverImage:{
-        medium:string
+        large:string
         color:string
     }
 

@@ -2,6 +2,7 @@
   display: inline-block;
   width: 200px;
   margin: 10px;
+  vertical-align: top;
 }
 .show-box img {
   width: 100%;
