@@ -1,4 +1,4 @@
-interface ShowQueryResult
+interface ShowInfo
 {
     title:{
         romaji:string
@@ -19,11 +19,11 @@ interface ShowQueryResult
 interface ShowQueryResultWrapper
 {
     data:{
-        Media:ShowQueryResult
+        Media:ShowInfo
     }
 }
 
 type ShowFormats="MOVIE"|"ONA"|"TV"|"TV_SHORT";
 
 // arrays of shows keyed by their format
-type GroupedShowsQuery=Record<ShowFormats,ShowQueryResult[]>;
+type GroupedShowsQuery=Record<ShowFormats,ShowInfo[]>;

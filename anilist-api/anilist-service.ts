@@ -24,7 +24,7 @@ query ($id:Int)
 }`
 
 // request anilist for show data for given id.
-export async function queryShow(showId:number):Promise<ShowQueryResult|null>
+export async function queryShow(showId:number):Promise<ShowInfo|null>
 {
     var queryResult:ShowQueryResultWrapper=await (await fetch("https://graphql.anilist.co",{
         method:"POST",
@@ -46,13 +46,13 @@ export async function queryShow(showId:number):Promise<ShowQueryResult|null>
 // request anilist show data for multiple shows, sort into category
 export async function queryShows(showIds:number[]):Promise<GroupedShowsQuery>
 {
-    var showResults:(ShowQueryResult|null)[]=await Promise.all(_.map(showIds,(x:number)=>{
+    var showResults:(ShowInfo|null)[]=await Promise.all(_.map(showIds,(x:number)=>{
         return queryShow(x);
     }));
 
-    var showResultsFiltered:ShowQueryResult[]=_.filter(showResults) as ShowQueryResult[];
+    var showResultsFiltered:ShowInfo[]=_.filter(showResults) as ShowInfo[];
 
-    return _.groupBy(showResultsFiltered,(x:ShowQueryResult)=>{
+    return _.groupBy(showResultsFiltered,(x:ShowInfo)=>{
         return x.format;
     }) as GroupedShowsQuery;
 }

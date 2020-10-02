@@ -4,11 +4,17 @@ import ShowBox from "../show-box/show-box";
 
 import "./show-section.less";
 
-export default function ShowSection():JSX.Element
+interface ShowSectionProps
+{
+  title:string
+  shows:ShowInfo[]
+}
+
+export default function ShowSection(props:ShowSectionProps):JSX.Element
 {
   return <section className="show-section">
     <div className="title-zone">
-      <h1>TV</h1>
+      <h1>{props.title}</h1>
       <div className="title-bar">
         <div className="inner-bar"></div>
       </div>
