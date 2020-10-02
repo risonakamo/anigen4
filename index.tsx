@@ -20,7 +20,8 @@ const exampleIds:number[]=[
 
 function IndexMain():JSX.Element
 {
-  const [showSections,setShowSections]=useState<JSX.Element[]>([]);
+  // the currently loaded shows grouped by type.
+  const [shows,setShows]=useState<GroupedShowsQuery>({});
 
   useEffect(()=>{
     (async ()=>{
@@ -31,12 +32,12 @@ function IndexMain():JSX.Element
   // load array of show ids, re-rendering show sections
   async function loadShows(showIds:number[]):Promise<void>
   {
-    var showInfos:GroupedShowsQuery=await queryShows(showIds);
-
-    setShowSections(_.map(showInfos,(x:ShowInfo[],i:string)=>{
-      return <ShowSection title={i} shows={x} key={i}/>;
-    }));
+    setShows(await queryShows(showIds));
   }
+
+  const showSections=_.map(shows,(x:ShowInfo[],i:string)=>{
+    return <ShowSection title={i} shows={x} key={i}/>;
+  });
 
   return <>
     {showSections}

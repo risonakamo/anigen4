@@ -26,4 +26,4 @@ interface ShowQueryResultWrapper
 type ShowFormats="MOVIE"|"ONA"|"TV"|"TV_SHORT";
 
 // arrays of shows keyed by their format
-type GroupedShowsQuery=Record<ShowFormats,ShowInfo[]>;
+type GroupedShowsQuery=Record<ShowFormats|string,ShowInfo[]>;
