@@ -10,8 +10,8 @@ interface ShowBoxProps
 
 export default function ShowBox(props:ShowBoxProps):JSX.Element
 {
-  const genretags=_.map(props.show.genres,(x:string)=>{
-    return <span>{x}</span>
+  const genretags=_.map(props.show.genres,(x:string,i:number)=>{
+    return <span key={i}>{x}</span>
   });
 
   return <div className="show-box">
