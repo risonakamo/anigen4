@@ -65,6 +65,21 @@
   background: #cca574;
 }
 
+.chart-input-zone .chart-input {
+  display: block;
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  margin-top: 30px;
+  resize: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 2px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #131719;
   font-family: "roboto";
