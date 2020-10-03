@@ -19,7 +19,7 @@ export default function ShowSection(props:ShowSectionProps):JSX.Element
 
   return <section className="show-section">
     <div className="title-zone">
-      <h1>{props.title}</h1>
+      <h1>{showFormatFormat(props.title)}</h1>
       <div className="title-bar">
         <div className="inner-bar"></div>
       </div>
@@ -28,4 +28,16 @@ export default function ShowSection(props:ShowSectionProps):JSX.Element
       {showBoxes}
     </div>
   </section>;
+}
+
+// format a showFormat text string
+function showFormatFormat(format:string):string
+{
+  switch (format)
+  {
+    case "TV_SHORT":
+    return "SHORT";
+  }
+
+  return format;
 }
