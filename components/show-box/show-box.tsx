@@ -16,7 +16,7 @@ export default function ShowBox(props:ShowBoxProps):JSX.Element
 
   return <div className="show-box">
     <div className="top-contain">
-      <span className="season">{props.show.season}</span>
+      <span className={`season ${props.show.season}`}>{props.show.season}</span>
       <span>{props.show.seasonYear}</span>
     </div>
 

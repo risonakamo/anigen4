@@ -1,3 +1,12 @@
+@import (reference) "../../index.less";
+
+@season-classes:{
+    WINTER:@winter-blue;
+    SPRING:@spring-green;
+    FALL:@fall-yellow;
+    SUMMER:@summer-red;
+}
+
 .show-box
 {
     display: inline-block;
@@ -20,7 +29,14 @@
         {
             margin-right: 3px;
             margin-left: 3px;
-            color: lightblue; //TEMP COLOUR
+            color: @main-white;
+
+            each(@season-classes,{
+                &.@{key}
+                {
+                    color: @value;
+                }
+            });
         }
     }
 

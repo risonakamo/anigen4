@@ -15,7 +15,19 @@
 .show-box .top-contain .season {
   margin-right: 3px;
   margin-left: 3px;
-  color: lightblue;
+  color: #ffffff;
+}
+.show-box .top-contain .season.WINTER {
+  color: #69e0ff;
+}
+.show-box .top-contain .season.SPRING {
+  color: #6aca7d;
+}
+.show-box .top-contain .season.FALL {
+  color: #ddb32e;
+}
+.show-box .top-contain .season.SUMMER {
+  color: #bf1e22;
 }
 .show-box .content-contain {
   margin-top: 2px;
