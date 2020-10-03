@@ -23,7 +23,7 @@ export default function ShowBox(props:ShowBoxProps):JSX.Element
     <img src={props.show.coverImage.large}/>
 
     <div className="content-contain">
-      <h2>{props.show.title.romaji}</h2>
+      <h2><a href={props.show.siteUrl}>{props.show.title.romaji}</a></h2>
       <div className="tags">
         {genretags}
       </div>
