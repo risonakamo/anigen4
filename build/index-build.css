@@ -79,6 +79,18 @@
   padding: 15px;
   box-sizing: border-box;
 }
+.chart-input-zone .buttons-zone {
+  text-align: center;
+  margin-top: 12px;
+}
+.chart-input-zone .buttons-zone .generate-button {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+  background: #393b40;
+  transition: 0.15s opacity;
+}
 
 body {
   background-color: #131719;
