@@ -1,17 +1,28 @@
-import React,{useRef,useImperativeHandle} from "react";
+import React,{useRef,useImperativeHandle,forwardRef} from "react";
 
 import "./chart-input-box.less";
 
-export default function ChartInputBox()
+export interface ChartInputBoxRef
+{
+  getValue():number[]
+}
+
+function ChartInputBox(props:{},ref:React.Ref<ChartInputBoxRef>)
 {
   const thetextbox=useRef<HTMLTextAreaElement>(null);
 
-  // PUBLIC
+  useImperativeHandle(ref,()=>({
+    getValue
+  }));
+
   // return the value of the textbox, parsed into array of show IDS
-  function getValue():void
+  function getValue():number[]
   {
     console.log(thetextbox.current!.value);
+    return [];
   }
 
   return <textarea className="chart-input" ref={thetextbox}></textarea>;
 }
+
+export default forwardRef(ChartInputBox);
