@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import _ from "lodash";
 
-import ShowSection from "../show-section/show-section";
+import ShowSection from "./components/show-section/show-section";
 import {queryShows} from "../../anilist-api/anilist-service";
 
 const exampleIds:number[]=[
