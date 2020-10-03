@@ -65,7 +65,7 @@
   background: #cca574;
 }
 
-.chart-input-zone .chart-input {
+.chart-input {
   display: block;
   width: 80%;
   height: 400px;
@@ -79,6 +79,7 @@
   padding: 15px;
   box-sizing: border-box;
 }
+
 .chart-input-zone .buttons-zone {
   text-align: center;
   margin-top: 12px;
