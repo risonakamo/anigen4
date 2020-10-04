@@ -36,6 +36,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
   }
 
   return <div className="chart-input-zone">
+    <input type="text" className="title-input"/>
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
       <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>

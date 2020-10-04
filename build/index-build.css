@@ -70,7 +70,6 @@
   width: 80%;
   height: 400px;
   margin: auto;
-  margin-top: 30px;
   resize: none;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.1);
@@ -81,6 +80,20 @@
   font-family: "roboto mono";
 }
 
+.chart-input-zone .title-input {
+  width: 80%;
+  display: block;
+  margin: 30px auto 12px auto;
+  padding: 8px;
+  border: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 18px;
+  font-family: "roboto";
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
 .chart-input-zone .buttons-zone {
   text-align: center;
   margin-top: 12px;
