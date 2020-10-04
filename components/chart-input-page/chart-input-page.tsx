@@ -12,7 +12,7 @@ export default function ChartInputPage()
   function submitHandler(e:React.MouseEvent)
   {
     e.preventDefault();
-    theinputbox.current!.getValue();
+    console.log(theinputbox.current!.getValue());
   }
 
   return <div className="chart-input-zone">
