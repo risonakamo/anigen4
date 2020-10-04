@@ -3,13 +3,19 @@ import _ from "lodash";
 
 import "./chart-input-box.less";
 
+interface ChartInputBoxProps
+{
+  // called when this box submitting shows. includes the show ids.
+  submitShows(showIds:number[]):void
+}
+
 export interface ChartInputBoxRef
 {
   getValue():number[]
 }
 
 export default forwardRef(ChartInputBox);
-function ChartInputBox(props:{},ref:React.Ref<ChartInputBoxRef>)
+function ChartInputBox(props:ChartInputBoxProps,ref:React.Ref<ChartInputBoxRef>)
 {
   const thetextbox=useRef<HTMLTextAreaElement>(null);
 
@@ -23,7 +29,17 @@ function ChartInputBox(props:{},ref:React.Ref<ChartInputBoxRef>)
     return parseShowIds(thetextbox.current!.value.split("\n"));
   }
 
-  return <textarea className="chart-input" ref={thetextbox}></textarea>;
+  // text box key down handler
+  function keyHandler(e:React.KeyboardEvent):void
+  {
+    if (e.key=="Enter" && e.ctrlKey)
+    {
+      e.preventDefault();
+      props.submitShows(getValue());
+    }
+  }
+
+  return <textarea className="chart-input" ref={thetextbox} onKeyDown={keyHandler}></textarea>;
 }
 
 // convert array of show links to show ids. if a string is not valid,
