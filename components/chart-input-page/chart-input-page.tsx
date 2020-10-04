@@ -1,18 +1,27 @@
 import React,{useRef} from "react";
+import {useHistory} from "react-router-dom";
 
 import ChartInputBox,{ChartInputBoxRef} from "./components/chart-input-box/chart-input-box";
 
 import "./chart-input-page.less";
 
-export default function ChartInputPage()
+interface ChartInputPageProps
+{
+  // called when shows are submitted. includes show ids submitted.
+  submitedShows(showIds:number[]):void
+}
+
+export default function ChartInputPage(props:ChartInputPageProps)
 {
   const theinputbox=useRef<ChartInputBoxRef>(null);
+  const routerHistory=useHistory();
 
-  // read chart input and navigate to chart page
+  // submit shows and perform page navigation
   function submitHandler(e:React.MouseEvent)
   {
     e.preventDefault();
-    console.log(theinputbox.current!.getValue());
+    routerHistory.push("/chart");
+    props.submitedShows(theinputbox.current!.getValue());
   }
 
   return <div className="chart-input-zone">

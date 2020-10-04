@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactDOM from "react-dom";
 import {MemoryRouter as Router,Switch,Route,Link} from "react-router-dom";
 
@@ -9,13 +9,21 @@ import "./index.less";
 
 function IndexMain()
 {
+  const [showIds,setShowIds]=useState<number[]>([]);
+
+  // load show ids.
+  function loadShowIds(showIds:number[]):void
+  {
+    setShowIds(showIds);
+  }
+
   return <Router>
     <Switch>
       <Route exact path="/">
-        <ChartInputPage/>
+        <ChartInputPage submitedShows={loadShowIds}/>
       </Route>
       <Route exact path="/chart">
-        <ChartPage/>
+        <ChartPage showIds={showIds}/>
       </Route>
     </Switch>
   </Router>;

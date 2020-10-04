@@ -4,33 +4,27 @@ import _ from "lodash";
 import ShowSection from "./components/show-section/show-section";
 import {queryShows} from "../../anilist-api/anilist-service";
 
-const exampleIds:number[]=[
-  112258,
-  16742,
-  109019,
-  108941,
-  21683,
-  106967,
-  104462,
-  104937
-];
-
 // these sections will come first in this order
 const showSectionOrder:string[]=[
   "TV",
   "TV_SHORT"
 ];
 
-export default function ChartPage():JSX.Element
+interface ChartPageProps
+{
+  showIds:number[] //load in show ids
+}
+
+export default function ChartPage(props:ChartPageProps):JSX.Element
 {
   // the currently loaded shows grouped by type.
   const [shows,setShows]=useState<GroupedShowsQuery>({});
 
+  // load new shows when input show ids change
   useEffect(()=>{
-    (async ()=>{
-      loadShows(exampleIds);
-    })();
-  },[]);
+    console.log("loading new shows");
+    loadShows(props.showIds);
+  },[props.showIds]);
 
   // load array of show ids, re-rendering show sections
   async function loadShows(showIds:number[]):Promise<void>
