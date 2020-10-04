@@ -78,6 +78,7 @@
   border-radius: 2px;
   padding: 15px;
   box-sizing: border-box;
+  font-family: "roboto mono";
 }
 
 .chart-input-zone .buttons-zone {
