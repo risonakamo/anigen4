@@ -32,5 +32,24 @@
             background: @light-blue-grey;
             transition: .15s opacity;
         }
+
+        .generated-notification
+        {
+            display: none;
+            font-size: 12px;
+            font-weight: 300;
+            margin-top: 8px;
+
+            &.invalid-input
+            {
+                color: @summer-red; //maybe change to something else?
+                font-style: italic;
+            }
+
+            &.showing
+            {
+                display: block;
+            }
+        }
     }
 }

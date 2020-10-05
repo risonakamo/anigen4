@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React,{useRef,useState} from "react";
 import {useHistory} from "react-router-dom";
 
 import ChartInputBox,{ChartInputBoxRef} from "./components/chart-input-box/chart-input-box";
@@ -13,6 +13,9 @@ interface ChartInputPageProps
 
 export default function ChartInputPage(props:ChartInputPageProps)
 {
+  // whether the user had entered an invalid input before.
+  const [inputInvalid,setInvalidInput]=useState<boolean>(false);
+
   const theinputbox=useRef<ChartInputBoxRef>(null);
   const routerHistory=useHistory();
 
@@ -28,6 +31,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
   {
     if (!showIds.length)
     {
+      setInvalidInput(true);
       return;
     }
 
@@ -35,11 +39,14 @@ export default function ChartInputPage(props:ChartInputPageProps)
     props.submitedShows(showIds);
   }
 
+  var inputInvalidClass=inputInvalid?"showing":"";
+
   return <div className="chart-input-zone">
     <input type="text" className="title-input"/>
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
       <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>
+      <p className={`generated-notification invalid-input ${inputInvalidClass}`}>Input Invalid.</p>
     </div>
   </div>;
 }
