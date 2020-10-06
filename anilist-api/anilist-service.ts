@@ -16,7 +16,6 @@ query ($id:Int)
         }
 
         startDate {
-            year
             month
             day
         }

@@ -10,7 +10,6 @@ interface ShowInfo
     }
 
     startDate:{
-        year:number
         month:number
         day:number
     }
