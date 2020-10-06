@@ -42,7 +42,9 @@ export default function ChartInputPage(props:ChartInputPageProps)
   var inputInvalidClass=inputInvalid?"showing":"";
 
   return <div className="chart-input-zone">
+    <h4>Chart Title</h4>
     <input type="text" className="title-input"/>
+    <h4>Anilist links</h4>
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
       <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>
