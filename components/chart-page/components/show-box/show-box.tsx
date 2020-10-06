@@ -18,6 +18,7 @@ export default function ShowBox(props:ShowBoxProps):JSX.Element
     <div className="top-contain">
       <span className={`season ${props.show.season}`}>{props.show.season}</span>
       <span>{props.show.seasonYear}</span>
+      <span className="date-field">Aug 20</span>
     </div>
 
     <img src={props.show.coverImage.large}/>

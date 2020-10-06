@@ -25,18 +25,27 @@
         font-size: 10px;
         margin-bottom: 4px;
 
-        .season
+        & > span
         {
             margin-right: 3px;
-            margin-left: 3px;
-            color: @main-white;
 
-            each(@season-classes,{
-                &.@{key}
-                {
-                    color: @value;
-                }
-            });
+            &.season
+            {
+                margin-left: 3px;
+                color: @main-white;
+
+                each(@season-classes,{
+                    &.@{key}
+                    {
+                        color: @value;
+                    }
+                });
+            }
+
+            &.date-field
+            {
+                opacity: .5;
+            }
         }
     }
 

@@ -15,6 +15,12 @@ query ($id:Int)
             color
         }
 
+        startDate {
+            year
+            month
+            day
+        }
+
         season
         seasonYear
         format

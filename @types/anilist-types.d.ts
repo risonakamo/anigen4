@@ -9,6 +9,12 @@ interface ShowInfo
         color:string
     }
 
+    startDate:{
+        year:number
+        month:number
+        day:number
+    }
+
     season:"SPRING"|"WINTER"|"SUMMER"|"FALL"
     seasonYear:number
     format:ShowFormats

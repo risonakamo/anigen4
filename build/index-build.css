@@ -12,22 +12,27 @@
   font-size: 10px;
   margin-bottom: 4px;
 }
-.show-box .top-contain .season {
+.show-box .top-contain > span {
   margin-right: 3px;
+}
+.show-box .top-contain > span.season {
   margin-left: 3px;
   color: #ffffff;
 }
-.show-box .top-contain .season.WINTER {
+.show-box .top-contain > span.season.WINTER {
   color: #69e0ff;
 }
-.show-box .top-contain .season.SPRING {
+.show-box .top-contain > span.season.SPRING {
   color: #6aca7d;
 }
-.show-box .top-contain .season.FALL {
+.show-box .top-contain > span.season.FALL {
   color: #ddb32e;
 }
-.show-box .top-contain .season.SUMMER {
+.show-box .top-contain > span.season.SUMMER {
   color: #bf1e22;
+}
+.show-box .top-contain > span.date-field {
+  opacity: 0.5;
 }
 .show-box .content-contain {
   margin-top: 2px;
