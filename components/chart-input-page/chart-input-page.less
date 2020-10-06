@@ -32,7 +32,18 @@
             border-radius: 3px;
             font-weight: 300;
             background: @light-blue-grey;
-            transition: .15s opacity;
+            transition: .15s background;
+
+            &:hover
+            {
+                opacity: 1;
+                background: @side-brown-grey;
+            }
+
+            &:active
+            {
+                opacity: .7;
+            }
         }
 
         .generated-notification

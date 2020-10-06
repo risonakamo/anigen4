@@ -107,7 +107,14 @@
   border-radius: 3px;
   font-weight: 300;
   background: #393b40;
-  transition: 0.15s opacity;
+  transition: 0.15s background;
+}
+.chart-input-zone .buttons-zone .generate-button:hover {
+  opacity: 1;
+  background: #605446;
+}
+.chart-input-zone .buttons-zone .generate-button:active {
+  opacity: 0.7;
 }
 .chart-input-zone .buttons-zone .generated-notification {
   display: none;
@@ -152,6 +159,9 @@ a {
 }
 a:hover {
   opacity: 0.7;
+}
+a:active {
+  opacity: 0.5;
 }
 p {
   margin: 0;
