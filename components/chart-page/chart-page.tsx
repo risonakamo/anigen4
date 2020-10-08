@@ -15,6 +15,8 @@ const showSectionOrder:string[]=[
 interface ChartPageProps
 {
   showIds:number[] //load in show ids
+  title:string //chart title
+  date:string //displayed chart date
 }
 
 export default function ChartPage(props:ChartPageProps):JSX.Element
@@ -57,8 +59,8 @@ export default function ChartPage(props:ChartPageProps):JSX.Element
 
   return <div className="chart-page">
     <div className="title-area">
-      <h1>Winter 2020</h1>
-      <p>2020/10/09</p>
+      <h1>{props.title}</h1>
+      <p>{props.date}</p>
     </div>
     {generateShowSections()}
   </div>;

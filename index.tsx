@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import ReactDOM from "react-dom";
 import {MemoryRouter as Router,Switch,Route,Link} from "react-router-dom";
+import {DateTime} from "luxon";
 
 import ChartPage from "./components/chart-page/chart-page";
 import ChartInputPage from "./components/chart-input-page/chart-input-page";
@@ -9,12 +10,21 @@ import "./index.less";
 
 function IndexMain()
 {
+  // current show ids
   const [showIds,setShowIds]=useState<number[]>([]);
 
+  // current chart title
+  const [chartTitle,setChartTitle]=useState<string>("");
+
+  // current chart date
+  const [chartDate,setChartDate]=useState<string>("");
+
   // load show ids.
-  function loadShowIds(showIds:number[]):void
+  function loadShowIds(showIds:number[],chartTitle:string):void
   {
     setShowIds(showIds);
+    setChartTitle(chartTitle);
+    setChartDate(DateTime.local().toFormat("yyyy/MM/dd"));
   }
 
   return <Router>
@@ -23,7 +33,7 @@ function IndexMain()
         <ChartInputPage submitedShows={loadShowIds}/>
       </Route>
       <Route exact path="/chart">
-        <ChartPage showIds={showIds}/>
+        <ChartPage showIds={showIds} title={chartTitle} date={chartDate}/>
       </Route>
     </Switch>
   </Router>;

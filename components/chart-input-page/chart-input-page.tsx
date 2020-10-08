@@ -7,8 +7,9 @@ import "./chart-input-page.less";
 
 interface ChartInputPageProps
 {
-  // called when shows are submitted. includes show ids submitted.
-  submitedShows(showIds:number[]):void
+  // called when shows are submitted. includes show ids submitted and the
+  // user provided title
+  submitedShows(showIds:number[],chartTitle:string):void
 }
 
 export default function ChartInputPage(props:ChartInputPageProps)
@@ -17,6 +18,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
   const [inputInvalid,setInvalidInput]=useState<boolean>(false);
 
   const theinputbox=useRef<ChartInputBoxRef>(null);
+  const titleInputbox=useRef<HTMLInputElement>(null);
   const routerHistory=useHistory();
 
   // submit shows and perform page navigation
@@ -36,14 +38,14 @@ export default function ChartInputPage(props:ChartInputPageProps)
     }
 
     routerHistory.push("/chart");
-    props.submitedShows(showIds);
+    props.submitedShows(showIds,titleInputbox.current!.value);
   }
 
   var inputInvalidClass=inputInvalid?"showing":"";
 
   return <div className="chart-input-zone">
     <h4>Chart Title</h4>
-    <input type="text" className="title-input"/>
+    <input type="text" className="title-input" ref={titleInputbox}/>
     <h4>Anilist links</h4>
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
