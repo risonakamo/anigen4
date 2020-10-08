@@ -70,6 +70,21 @@
   background: #cca574;
 }
 
+.chart-page .title-area {
+  margin: 27px;
+  text-align: center;
+}
+.chart-page .title-area h1 {
+  font-size: 20px;
+  font-family: "open sans";
+  margin: 0;
+}
+.chart-page .title-area p {
+  font-size: 10px;
+  margin-top: -1px;
+  opacity: 0.5;
+}
+
 .chart-input {
   display: block;
   width: 100%;

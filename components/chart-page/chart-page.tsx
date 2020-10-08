@@ -4,6 +4,8 @@ import _ from "lodash";
 import ShowSection from "./components/show-section/show-section";
 import {queryShows} from "../../anilist-api/anilist-service";
 
+import "./chart-page.less";
+
 // these sections will come first in this order
 const showSectionOrder:string[]=[
   "TV",
@@ -53,7 +55,11 @@ export default function ChartPage(props:ChartPageProps):JSX.Element
     ];
   }
 
-  return <>
+  return <div className="chart-page">
+    <div className="title-area">
+      <h1>Winter 2020</h1>
+      <p>2020/10/09</p>
+    </div>
     {generateShowSections()}
-  </>;
+  </div>;
 }
