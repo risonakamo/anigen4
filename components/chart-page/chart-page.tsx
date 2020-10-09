@@ -3,6 +3,7 @@ import _ from "lodash";
 
 import ShowSection from "./components/show-section/show-section";
 import {queryShows} from "../../anilist-api/anilist-service";
+import ColouriseTitle from "./components/colourise-title/colourise-title";
 
 import "./chart-page.less";
 
@@ -59,7 +60,7 @@ export default function ChartPage(props:ChartPageProps):JSX.Element
 
   return <div className="chart-page">
     <div className="title-area">
-      <h1>{props.title}</h1>
+      <ColouriseTitle title={props.title}/>
       <p>{props.date}</p>
     </div>
     {generateShowSections()}
