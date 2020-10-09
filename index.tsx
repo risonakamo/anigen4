@@ -20,21 +20,21 @@ function IndexMain()
   const [chartDate,setChartDate]=useState<string>("");
 
   // load show ids.
-  function loadShowIds(showIds:number[],chartTitle:string):void
+  function loadShowIds(showIds:number[],newChartTitle:string):void
   {
     setShowIds(showIds);
 
-    var madeChartDate:string=DateTime.local().toFormat("yyyy/MM/dd");
-    if (chartTitle)
+    var newChartDate:string=DateTime.local().toFormat("yyyy/MM/dd");
+
+    if (!newChartTitle)
     {
-      setChartTitle(chartTitle);
-      setChartDate(madeChartDate);
+      newChartTitle=newChartDate;
+      newChartDate="";
     }
 
-    else
-    {
-      setChartTitle(madeChartDate);
-    }
+    setChartTitle(newChartTitle);
+    setChartDate(newChartDate);
+    document.title=`${newChartTitle} - Anigen 4`;
   }
 
   return <Router>
