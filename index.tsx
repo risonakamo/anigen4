@@ -23,8 +23,18 @@ function IndexMain()
   function loadShowIds(showIds:number[],chartTitle:string):void
   {
     setShowIds(showIds);
-    setChartTitle(chartTitle);
-    setChartDate(DateTime.local().toFormat("yyyy/MM/dd"));
+
+    var madeChartDate:string=DateTime.local().toFormat("yyyy/MM/dd");
+    if (chartTitle)
+    {
+      setChartTitle(chartTitle);
+      setChartDate(madeChartDate);
+    }
+
+    else
+    {
+      setChartTitle(madeChartDate);
+    }
   }
 
   return <Router>
