@@ -1,7 +1,10 @@
 import React from "react";
 import _ from "lodash";
 
+import "./colourise-title.less";
+
 const _extractSeason:RegExp=/(.*?)(spring|summer|fall|winter)(.*)/i;
+const _seasonMatch:RegExp=/spring|summer|fall|winter/i;
 
 interface ColouriseTitleProps
 {
@@ -10,8 +13,10 @@ interface ColouriseTitleProps
 
 export default function ColouriseTitle(props:ColouriseTitleProps):JSX.Element
 {
-  // splitRegSegment(props.title,_extractSeason)
-  return <h1><span>Winter</span> 2020</h1>;
+  const splitTitle:string[]=splitRegSegment(props.title,_extractSeason);
+  const theTitle:(JSX.Element|string)[]=_.map(splitTitle,wrapSeasonString);
+
+  return <h1 className="colourised-title">{theTitle}</h1>;
 }
 
 /* given a string, splits the string using a target regex. the string will be split
@@ -41,4 +46,16 @@ function splitRegSegment(input:string,targetReg:RegExp):string[]
   return _.reject(res,(x:string)=>{
     return x.length==0;
   });
+}
+
+// if the input string is a season, wrap it in a span with the season as the class,
+// otherwise just returns the string
+function wrapSeasonString(input:string,key:number):JSX.Element|string
+{
+  if (input.search(_seasonMatch)>=0)
+  {
+    return <span className={input.toUpperCase()} key={key}>{input}</span>;
+  }
+
+  return input;
 }

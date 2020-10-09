@@ -63,3 +63,21 @@ p
 {
     margin: 0;
 }
+
+// create modifier classes attachable to elements for seasons
+.generate-season-classes()
+{
+    @season-classes:{
+        WINTER:@winter-blue;
+        SPRING:@spring-green;
+        FALL:@fall-yellow;
+        SUMMER:@summer-red;
+    }
+
+    each(@season-classes,{
+        &.@{key}
+        {
+            color: @value;
+        }
+    });
+}

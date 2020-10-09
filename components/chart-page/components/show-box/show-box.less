@@ -1,11 +1,6 @@
 @import (reference) "../../../../index.less";
 
-@season-classes:{
-    WINTER:@winter-blue;
-    SPRING:@spring-green;
-    FALL:@fall-yellow;
-    SUMMER:@summer-red;
-}
+
 
 .show-box
 {
@@ -34,12 +29,7 @@
                 margin-left: 3px;
                 color: @main-white;
 
-                each(@season-classes,{
-                    &.@{key}
-                    {
-                        color: @value;
-                    }
-                });
+                .generate-season-classes();
             }
 
             &.date-field

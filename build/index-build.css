@@ -70,6 +70,19 @@
   background: #cca574;
 }
 
+.colourised-title span.WINTER {
+  color: #69e0ff;
+}
+.colourised-title span.SPRING {
+  color: #6aca7d;
+}
+.colourised-title span.FALL {
+  color: #ddb32e;
+}
+.colourised-title span.SUMMER {
+  color: #bf1e22;
+}
+
 .chart-page .title-area {
   margin: 27px;
   text-align: center;
