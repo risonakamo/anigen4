@@ -22,7 +22,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
   const routerHistory=useHistory();
 
   // submit shows and perform page navigation
-  function submitHandler(e:React.MouseEvent)
+  function submitHandler(e:React.MouseEvent|React.KeyboardEvent)
   {
     e.preventDefault();
     submitNavigate(theinputbox.current!.getValue());
@@ -41,11 +41,21 @@ export default function ChartInputPage(props:ChartInputPageProps)
     props.submitedShows(showIds,titleInputbox.current!.value);
   }
 
+  // handle ctrl enter on title input box
+  function titleInputKeyHandler(e:React.KeyboardEvent)
+  {
+    if (e.key=="Enter" && e.ctrlKey)
+    {
+      e.preventDefault();
+      submitHandler(e);
+    }
+  }
+
   var inputInvalidClass=inputInvalid?"showing":"";
 
   return <div className="chart-input-zone">
     <h4>Chart Title</h4>
-    <input type="text" className="title-input" ref={titleInputbox}/>
+    <input type="text" className="title-input" ref={titleInputbox} onKeyDown={titleInputKeyHandler}/>
     <h4>Anilist links</h4>
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
