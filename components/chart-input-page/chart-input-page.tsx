@@ -1,5 +1,6 @@
 import React,{useRef,useState} from "react";
 import {useHistory} from "react-router-dom";
+import cx from "classnames";
 
 import ChartInputBox,{ChartInputBoxRef} from "./components/chart-input-box/chart-input-box";
 
@@ -51,8 +52,6 @@ export default function ChartInputPage(props:ChartInputPageProps)
     }
   }
 
-  var inputInvalidClass=inputInvalid?"showing":"";
-
   return <div className="chart-input-zone">
     <h4>Chart Title</h4>
     <input type="text" className="title-input" ref={titleInputbox} onKeyDown={titleInputKeyHandler}/>
@@ -60,7 +59,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
     <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
     <div className="buttons-zone">
       <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>
-      <p className={`generated-notification invalid-input ${inputInvalidClass}`}>Input Invalid.</p>
+      <p className={cx("generated-notification invalid-input",{showing:inputInvalid})}>Input Invalid.</p>
     </div>
   </div>;
 }
