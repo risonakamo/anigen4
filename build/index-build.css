@@ -113,10 +113,17 @@
   font-family: "roboto mono";
 }
 
-.chart-input-zone {
-  padding: 30px 10% 0 10%;
+.chart-input-page {
+  display: flex;
 }
-.chart-input-zone .title-input {
+.chart-input-page .saved-inputs {
+  width: 300px;
+}
+.chart-input-page .chart-input-zone {
+  padding: 30px 10% 0 10%;
+  flex: 1;
+}
+.chart-input-page .chart-input-zone .title-input {
   width: 100%;
   display: block;
   margin: 0 auto 12px auto;
@@ -130,11 +137,11 @@
   box-sizing: border-box;
   border-radius: 2px;
 }
-.chart-input-zone .buttons-zone {
+.chart-input-page .chart-input-zone .buttons-zone {
   text-align: center;
   margin-top: 12px;
 }
-.chart-input-zone .buttons-zone .generate-button {
+.chart-input-page .chart-input-zone .buttons-zone .generate-button {
   display: inline-block;
   padding: 10px;
   border-radius: 3px;
@@ -142,24 +149,24 @@
   background: #393b40;
   transition: 0.15s background;
 }
-.chart-input-zone .buttons-zone .generate-button:hover {
+.chart-input-page .chart-input-zone .buttons-zone .generate-button:hover {
   opacity: 1;
   background: #605446;
 }
-.chart-input-zone .buttons-zone .generate-button:active {
+.chart-input-page .chart-input-zone .buttons-zone .generate-button:active {
   opacity: 0.7;
 }
-.chart-input-zone .buttons-zone .generated-notification {
+.chart-input-page .chart-input-zone .buttons-zone .generated-notification {
   display: none;
   font-size: 12px;
   font-weight: 300;
   margin-top: 8px;
 }
-.chart-input-zone .buttons-zone .generated-notification.invalid-input {
+.chart-input-page .chart-input-zone .buttons-zone .generated-notification.invalid-input {
   color: #bf1e22;
   font-style: italic;
 }
-.chart-input-zone .buttons-zone .generated-notification.showing {
+.chart-input-page .chart-input-zone .buttons-zone .generated-notification.showing {
   display: block;
 }
 

@@ -1,67 +1,78 @@
 @import (reference) "../../index.less";
 
-.chart-input-zone
+.chart-input-page
 {
-    padding: 30px 10% 0 10%;
+    display: flex;
 
-    .title-input
+    .saved-inputs
     {
-        width: 100%;
-        display: block;
-        margin: 0 auto 12px auto;
-        padding: 8px;
-        border: none;
-        color: @main-white;
-        background: fade(@main-white,10%);
-        font-size: 18px;
-        font-family: "roboto";
-        letter-spacing: 1px;
-        box-sizing: border-box;
-        border-radius: 2px;
+        width: 300px;
     }
 
-    .buttons-zone
+    .chart-input-zone
     {
-        text-align: center;
-        margin-top: 12px;
+        padding: 30px 10% 0 10%;
+        flex: 1;
 
-        .generate-button
+        .title-input
         {
-            display: inline-block;
-            padding: 10px;
-            border-radius: 3px;
-            font-weight: 300;
-            background: @light-blue-grey;
-            transition: .15s background;
-
-            &:hover
-            {
-                opacity: 1;
-                background: @side-brown-grey;
-            }
-
-            &:active
-            {
-                opacity: .7;
-            }
+            width: 100%;
+            display: block;
+            margin: 0 auto 12px auto;
+            padding: 8px;
+            border: none;
+            color: @main-white;
+            background: fade(@main-white,10%);
+            font-size: 18px;
+            font-family: "roboto";
+            letter-spacing: 1px;
+            box-sizing: border-box;
+            border-radius: 2px;
         }
 
-        .generated-notification
+        .buttons-zone
         {
-            display: none;
-            font-size: 12px;
-            font-weight: 300;
-            margin-top: 8px;
+            text-align: center;
+            margin-top: 12px;
 
-            &.invalid-input
+            .generate-button
             {
-                color: @summer-red; //maybe change to something else?
-                font-style: italic;
+                display: inline-block;
+                padding: 10px;
+                border-radius: 3px;
+                font-weight: 300;
+                background: @light-blue-grey;
+                transition: .15s background;
+
+                &:hover
+                {
+                    opacity: 1;
+                    background: @side-brown-grey;
+                }
+
+                &:active
+                {
+                    opacity: .7;
+                }
             }
 
-            &.showing
+            .generated-notification
             {
-                display: block;
+                display: none;
+                font-size: 12px;
+                font-weight: 300;
+                margin-top: 8px;
+
+                &.invalid-input
+                {
+                    color: @summer-red; //maybe change to something else?
+                    font-style: italic;
+                }
+
+                &.showing
+                {
+                    display: block;
+                }
             }
         }
     }

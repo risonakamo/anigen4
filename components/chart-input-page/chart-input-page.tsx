@@ -52,14 +52,19 @@ export default function ChartInputPage(props:ChartInputPageProps)
     }
   }
 
-  return <div className="chart-input-zone">
-    <h4>Chart Title</h4>
-    <input type="text" className="title-input" ref={titleInputbox} onKeyDown={titleInputKeyHandler}/>
-    <h4>Anilist links</h4>
-    <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
-    <div className="buttons-zone">
-      <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>
-      <p className={cx("generated-notification invalid-input",{showing:inputInvalid})}>Input Invalid.</p>
+  return <div className="chart-input-page">
+    <div className="saved-inputs">
+
+    </div>
+    <div className="chart-input-zone">
+      <h4>Chart Title</h4>
+      <input type="text" className="title-input" ref={titleInputbox} onKeyDown={titleInputKeyHandler}/>
+      <h4>Anilist links</h4>
+      <ChartInputBox ref={theinputbox} submitShows={submitNavigate}/>
+      <div className="buttons-zone">
+        <a className="generate-button" onClick={submitHandler} href="chart">Generate Chart</a>
+        <p className={cx("generated-notification invalid-input",{showing:inputInvalid})}>Input Invalid.</p>
+      </div>
     </div>
   </div>;
 }
