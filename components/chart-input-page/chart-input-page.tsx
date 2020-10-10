@@ -3,6 +3,7 @@ import {useHistory} from "react-router-dom";
 import cx from "classnames";
 
 import ChartInputBox,{ChartInputBoxRef} from "./components/chart-input-box/chart-input-box";
+import SavedBox from "./components/saved-box/saved-box";
 
 import "./chart-input-page.less";
 
@@ -54,7 +55,7 @@ export default function ChartInputPage(props:ChartInputPageProps)
 
   return <div className="chart-input-page">
     <div className="saved-inputs">
-
+      <SavedBox/>
     </div>
     <div className="chart-input-zone">
       <h4>Chart Title</h4>

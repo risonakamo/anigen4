@@ -113,6 +113,35 @@
   font-family: "roboto mono";
 }
 
+.saved-box {
+  display: flex;
+  width: 95%;
+  margin: 10px auto 10px auto;
+  border-radius: 2px;
+  padding: 14px;
+  box-sizing: border-box;
+  background: #393b40;
+}
+.saved-box .left {
+  flex: 1;
+}
+.saved-box .left h2 {
+  font-family: "open sans";
+  font-size: 16px;
+  line-height: 1.1;
+}
+.saved-box .left p {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.saved-box .right {
+  padding-left: 13px;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+}
+
 .chart-input-page {
   display: flex;
 }

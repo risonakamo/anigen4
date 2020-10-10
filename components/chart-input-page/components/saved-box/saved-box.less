@@ -1,0 +1,39 @@
+@import (reference) "../../../../index.less";
+
+.saved-box
+{
+    display: flex;
+    width: 95%;
+    margin: 10px auto 10px auto;
+    border-radius: 2px;
+    padding: 14px;
+    box-sizing: border-box;
+    background: @light-blue-grey; //TEMP
+
+    .left
+    {
+        flex: 1;
+
+        h2
+        {
+            font-family: "open sans";
+            font-size: 16px;
+            line-height: 1.1;
+        }
+
+        p
+        {
+            font-size: 12px;
+            opacity: .5;
+            margin-top: 4px;
+        }
+    }
+
+    .right
+    {
+        padding-left: 13px;
+        border-left: 1px solid fade(@main-white,60%);
+        display: flex;
+        align-items: center;
+    }
+}
