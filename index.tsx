@@ -5,6 +5,7 @@ import {DateTime} from "luxon";
 
 import ChartPage from "./components/chart-page/chart-page";
 import ChartInputPage from "./components/chart-input-page/chart-input-page";
+import {addSavedInput,getSavedInputs} from "./database/windowstorage";
 
 import "./index.less";
 
@@ -35,6 +36,13 @@ function IndexMain()
     setChartTitle(newChartTitle);
     setChartDate(newChartDate);
     document.title=`${newChartTitle} - Anigen 4`;
+
+    addSavedInput({
+      title:newChartTitle,
+      showIds,
+      dateText:newChartDate
+    });
+    console.log(getSavedInputs());
   }
 
   return <Router>
