@@ -19,7 +19,7 @@ function IndexMain()
   // current chart date
   const [chartDate,setChartDate]=useState<string>("");
 
-  // load show ids.
+  // load show ids and a title. also saves to database.
   function loadShowIds(showIds:number[],newChartTitle:string):void
   {
     setShowIds(showIds);

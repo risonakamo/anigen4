@@ -8,4 +8,5 @@ interface ChartInput
 {
     title:string
     showIds:number[]
+    dateText:string
 }

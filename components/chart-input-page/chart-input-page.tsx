@@ -23,14 +23,16 @@ export default function ChartInputPage(props:ChartInputPageProps)
   const titleInputbox=useRef<HTMLInputElement>(null);
   const routerHistory=useHistory();
 
-  // submit shows and perform page navigation
+  // top submit function, retrieve show ids from inputbox and submit
+  // using other submit function
   function submitHandler(e:React.MouseEvent|React.KeyboardEvent)
   {
     e.preventDefault();
     submitNavigate(theinputbox.current!.getValue());
   }
 
-  // submit show ids and navigate to chart page
+  // 2nd level submit, takes show ids, grabs title from title box,
+  // performs navigation.
   function submitNavigate(showIds:number[]):void
   {
     if (!showIds.length)
