@@ -8,7 +8,8 @@
     border-radius: 2px;
     padding: 14px;
     box-sizing: border-box;
-    background: @light-blue-grey; //TEMP
+    background: @save-box-dark-grey;
+    transition: background .15s;
 
     .left
     {
@@ -38,5 +39,17 @@
         padding-left: 13px;
         border-left: 1px solid fade(@main-white,60%);
         align-items: center;
+        color: @save-box-count-yellow;
+    }
+
+    &:hover
+    {
+        opacity: 1;
+        background: #423d34;
+    }
+
+    &:active
+    {
+        opacity: .7;
     }
 }
