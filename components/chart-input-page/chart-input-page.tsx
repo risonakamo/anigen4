@@ -34,8 +34,8 @@ export default function ChartInputPage(props:ChartInputPageProps)
   }
 
   // 2nd level submit, takes show ids, grabs title from title box,
-  // performs navigation.
-  function submitNavigate(showIds:number[]):void
+  // performs navigation. if given a title, uses that title.
+  function submitNavigate(showIds:number[],title?:string):void
   {
     if (!showIds.length)
     {
@@ -43,8 +43,13 @@ export default function ChartInputPage(props:ChartInputPageProps)
       return;
     }
 
+    if (!title)
+    {
+      title=titleInputbox.current!.value;
+    }
+
     routerHistory.push("/chart");
-    props.submitedShows(showIds,titleInputbox.current!.value);
+    props.submitedShows(showIds,title);
   }
 
   // handle ctrl enter on title input box
@@ -57,11 +62,17 @@ export default function ChartInputPage(props:ChartInputPageProps)
     }
   }
 
+  // submitter for provided saved data.
+  function submitSavedInput(savedData:ChartInput):void
+  {
+    submitNavigate(savedData.showIds,savedData.title);
+  }
+
   // create the saved inputs by pulling from storage
   function generateSavedInputs():JSX.Element[]
   {
     return _.map(getSavedInputs(),(x:ChartInput,i:number)=>{
-      return <SavedBox savedData={x} key={i}/>;
+      return <SavedBox savedData={x} key={i} onClick={submitSavedInput}/>;
     });
   }
 
