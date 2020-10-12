@@ -1,3 +1,5 @@
+const _maxSavedInputs=10;
+
 // get the saved inputs
 export function getSavedInputs():ChartInput[]
 {
@@ -11,6 +13,11 @@ export function addSavedInput(input:ChartInput):void
         input,
         ...getSavedInputs()
     ];
+
+    if (newSavedInputs.length>_maxSavedInputs)
+    {
+        newSavedInputs.pop();
+    }
 
     window.localStorage.setItem("savedInputs",JSON.stringify(newSavedInputs));
 }
