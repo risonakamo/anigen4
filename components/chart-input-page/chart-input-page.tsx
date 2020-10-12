@@ -1,9 +1,11 @@
 import React,{useRef,useState} from "react";
 import {useHistory} from "react-router-dom";
 import cx from "classnames";
+import _ from "lodash";
 
 import ChartInputBox,{ChartInputBoxRef} from "./components/chart-input-box/chart-input-box";
 import SavedBox from "./components/saved-box/saved-box";
+import {getSavedInputs} from "../../database/windowstorage";
 
 import "./chart-input-page.less";
 
@@ -55,9 +57,17 @@ export default function ChartInputPage(props:ChartInputPageProps)
     }
   }
 
+  // create the saved inputs by pulling from storage
+  function generateSavedInputs():JSX.Element[]
+  {
+    return _.map(getSavedInputs(),(x:ChartInput,i:number)=>{
+      return <SavedBox savedData={x} key={i}/>;
+    });
+  }
+
   return <div className="chart-input-page">
     <div className="saved-inputs">
-      <SavedBox/>
+      {generateSavedInputs()}
     </div>
     <div className="chart-input-zone">
       <h4>Chart Title</h4>

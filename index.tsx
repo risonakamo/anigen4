@@ -42,7 +42,6 @@ function IndexMain()
       showIds,
       dateText:newChartDate
     });
-    console.log(getSavedInputs());
   }
 
   return <Router>

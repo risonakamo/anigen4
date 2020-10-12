@@ -2,15 +2,18 @@ import React from "react";
 
 import "./saved-box.less";
 
-export default function SavedBox():JSX.Element
+interface SavedBoxProps
+{
+  savedData:ChartInput
+}
+
+export default function SavedBox(props:SavedBoxProps):JSX.Element
 {
   return <div className="saved-box">
     <div className="left">
-      <h2>winter 2020</h2>
-      <p>2020/10/02</p>
+      <h2>{props.savedData.title}</h2>
+      <p>{props.savedData.dateText}</p>
     </div>
-    <div className="right">
-      12
-    </div>
+    <div className="right">{props.savedData.showIds.length}</div>
   </div>;
 }

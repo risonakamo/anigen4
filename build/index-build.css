@@ -136,9 +136,12 @@
   margin-top: 4px;
 }
 .saved-box .right {
+  display: flex;
+  min-width: 32px;
+  box-sizing: border-box;
+  text-align: right;
   padding-left: 13px;
   border-left: 1px solid rgba(255, 255, 255, 0.6);
-  display: flex;
   align-items: center;
 }
 
